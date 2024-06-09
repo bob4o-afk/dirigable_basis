@@ -1,0 +1,15 @@
+{
+  "files": [
+    {
+      "table": "CODBEX_PESHOTYPE",
+      "schema": "PUBLIC",
+      "file": "/dirigable_basis-data/pesho-type.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true,
+      "version": "1.0"
+    }
+  ]
+}
