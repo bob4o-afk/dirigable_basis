@@ -1,0 +1,5 @@
+{
+    "module": "dirigable_basis/gen/ui/launchpad/menu-help.js",
+    "extensionPoint": "dirigable_basis-menu",
+    "description": "dirigable_basis - Application Menu"
+}

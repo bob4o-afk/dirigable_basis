@@ -1,0 +1,5 @@
+{
+    "module": "dirigable_basis/gen/ui/Settings/PeshoType/dialog-filter/view.js",
+    "extensionPoint": "dirigable_basis-dialog-window",
+    "description": "dirigable_basis - Application Dialog Window"
+}

@@ -1,0 +1,76 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "CODBEX_PESHO",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "PESHO_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 100,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "PESHO_NAME"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": NaN,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "PESHO_HOWLONGUNTILDEATH"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "PESHO_PESHOTYPE"
+                    }
+                ]
+            },
+            {
+                "name": "CODBEX_PESHOTYPE",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "PESHOTYPE_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 100,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "PESHOTYPE_NAME"
+                    }
+                ]
+            },
+            {
+                "name": "Pesho_PeshoType",
+                "type": "foreignKey",
+                "table": "CODBEX_PESHO",
+                "constraintName": "Pesho_PeshoType",
+                "columns": "PESHO_PESHOTYPE",
+                "referencedTable": "CODBEX_PESHOTYPE",
+                "referencedColumns": "PESHOTYPE_ID"
+            }
+        ]
+    },
+    "datasource": "DefaultDB"
+}

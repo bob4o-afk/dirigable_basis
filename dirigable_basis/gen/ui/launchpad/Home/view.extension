@@ -1,0 +1,5 @@
+{
+    "module": "dirigable_basis/gen/ui/launchpad/Home/view.js",
+    "extensionPoint": "dirigable_basis-view",
+    "description": "dirigable_basis - Application View"
+}
