@@ -41,6 +41,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			$scope.$apply(function () {
 				$scope.entity = {};
 				$scope.optionsPeshoType = [];
+				$scope.optionsProduct = [];
 				$scope.action = 'select';
 			});
 		});
@@ -49,6 +50,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			$scope.$apply(function () {
 				$scope.entity = msg.data.entity;
 				$scope.optionsPeshoType = msg.data.optionsPeshoType;
+				$scope.optionsProduct = msg.data.optionsProduct;
 				$scope.action = 'select';
 			});
 		});
@@ -57,6 +59,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			$scope.$apply(function () {
 				$scope.entity = {};
 				$scope.optionsPeshoType = msg.data.optionsPeshoType;
+				$scope.optionsProduct = msg.data.optionsProduct;
 				$scope.action = 'create';
 			});
 		});
@@ -65,6 +68,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			$scope.$apply(function () {
 				$scope.entity = msg.data.entity;
 				$scope.optionsPeshoType = msg.data.optionsPeshoType;
+				$scope.optionsProduct = msg.data.optionsProduct;
 				$scope.action = 'update';
 			});
 		});

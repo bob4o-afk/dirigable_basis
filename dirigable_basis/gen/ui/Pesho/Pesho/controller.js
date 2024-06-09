@@ -113,6 +113,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				entity: entity,
 				selectedMainEntityId: entity.Id,
 				optionsPeshoType: $scope.optionsPeshoType,
+				optionsProduct: $scope.optionsProduct,
 			});
 		};
 
@@ -123,6 +124,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.postMessage("createEntity", {
 				entity: {},
 				optionsPeshoType: $scope.optionsPeshoType,
+				optionsProduct: $scope.optionsProduct,
 			});
 		};
 
@@ -131,6 +133,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.postMessage("updateEntity", {
 				entity: $scope.selectedEntity,
 				optionsPeshoType: $scope.optionsPeshoType,
+				optionsProduct: $scope.optionsProduct,
 			});
 		};
 
@@ -168,11 +171,13 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Pesho-filter", {
 				entity: $scope.filterEntity,
 				optionsPeshoType: $scope.optionsPeshoType,
+				optionsProduct: $scope.optionsProduct,
 			});
 		};
 
 		//----------------Dropdowns-----------------//
 		$scope.optionsPeshoType = [];
+		$scope.optionsProduct = [];
 
 
 		$http.get("/services/ts/dirigable_basis/gen/api/Settings/PeshoTypeService.ts").then(function (response) {
@@ -184,10 +189,27 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
+		$http.get("/services/ts/codbex-products/gen/api/Products/ProductService.ts").then(function (response) {
+			$scope.optionsProduct = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
 		$scope.optionsPeshoTypeValue = function (optionKey) {
 			for (let i = 0; i < $scope.optionsPeshoType.length; i++) {
 				if ($scope.optionsPeshoType[i].value === optionKey) {
 					return $scope.optionsPeshoType[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsProductValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsProduct.length; i++) {
+				if ($scope.optionsProduct[i].value === optionKey) {
+					return $scope.optionsProduct[i].text;
 				}
 			}
 			return null;

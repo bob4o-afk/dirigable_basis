@@ -8,12 +8,14 @@ export interface PeshoEntity {
     Name?: string;
     HowLongUntilDeath?: number;
     PeshoType?: number;
+    Product?: number;
 }
 
 export interface PeshoCreateEntity {
     readonly Name?: string;
     readonly HowLongUntilDeath?: number;
     readonly PeshoType?: number;
+    readonly Product?: number;
 }
 
 export interface PeshoUpdateEntity extends PeshoCreateEntity {
@@ -27,42 +29,49 @@ export interface PeshoEntityOptions {
             Name?: string | string[];
             HowLongUntilDeath?: number | number[];
             PeshoType?: number | number[];
+            Product?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
             Name?: string | string[];
             HowLongUntilDeath?: number | number[];
             PeshoType?: number | number[];
+            Product?: number | number[];
         };
         contains?: {
             Id?: number;
             Name?: string;
             HowLongUntilDeath?: number;
             PeshoType?: number;
+            Product?: number;
         };
         greaterThan?: {
             Id?: number;
             Name?: string;
             HowLongUntilDeath?: number;
             PeshoType?: number;
+            Product?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
             Name?: string;
             HowLongUntilDeath?: number;
             PeshoType?: number;
+            Product?: number;
         };
         lessThan?: {
             Id?: number;
             Name?: string;
             HowLongUntilDeath?: number;
             PeshoType?: number;
+            Product?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
             Name?: string;
             HowLongUntilDeath?: number;
             PeshoType?: number;
+            Product?: number;
         };
     },
     $select?: (keyof PeshoEntity)[],
@@ -112,6 +121,11 @@ export class PeshoRepository {
             {
                 name: "PeshoType",
                 column: "PESHO_PESHOTYPE",
+                type: "INTEGER",
+            },
+            {
+                name: "Product",
+                column: "PESHO_PRODUCT",
                 type: "INTEGER",
             }
         ]

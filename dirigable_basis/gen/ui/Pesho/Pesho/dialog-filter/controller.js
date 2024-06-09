@@ -15,6 +15,7 @@ angular.module('page', ["ideUI", "ideView"])
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
 			$scope.optionsPeshoType = params.optionsPeshoType;
+			$scope.optionsProduct = params.optionsProduct;
 		}
 
 		$scope.filter = function () {
@@ -48,6 +49,9 @@ angular.module('page', ["ideUI", "ideView"])
 			}
 			if (entity.PeshoType !== undefined) {
 				filter.$filter.equals.PeshoType = entity.PeshoType;
+			}
+			if (entity.Product !== undefined) {
+				filter.$filter.equals.Product = entity.Product;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,

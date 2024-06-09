@@ -36,6 +36,14 @@
                         "scale": "NaN",
                         "nullable": true,
                         "name": "PESHO_PESHOTYPE"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "PESHO_PRODUCT"
                     }
                 ]
             },
@@ -69,6 +77,15 @@
                 "columns": "PESHO_PESHOTYPE",
                 "referencedTable": "CODBEX_PESHOTYPE",
                 "referencedColumns": "PESHOTYPE_ID"
+            },
+            {
+                "name": "Pesho_Product",
+                "type": "foreignKey",
+                "table": "CODBEX_PESHO",
+                "constraintName": "Pesho_Product",
+                "columns": "PESHO_PRODUCT",
+                "referencedTable": "CODBEX_PRODUCT",
+                "referencedColumns": "PRODUCT_ID"
             }
         ]
     },

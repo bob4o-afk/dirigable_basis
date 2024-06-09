@@ -833,6 +833,9 @@ components:
         PeshoType:
           type: integer
           format: int32
+        Product:
+          type: integer
+          format: int32
     PeshoFilterOptions:
       type: object
       properties:
@@ -870,6 +873,14 @@ components:
                         type: integer
                         format: int32
                 PeshoType:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                Product:
                   oneOf:
                     - type: integer
                       format: int32
@@ -915,6 +926,14 @@ components:
                       items:
                         type: integer
                         format: int32
+                Product:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
             contains:
               type: object
               properties:
@@ -925,6 +944,7 @@ components:
                   maxLength: 100
                 HowLongUntilDeath:
                 PeshoType:
+                Product:
             greaterThan:
               type: object
               properties:
@@ -939,6 +959,9 @@ components:
                   type: integer
                   format: int32
                 PeshoType:
+                  type: integer
+                  format: int32
+                Product:
                   type: integer
                   format: int32
             greaterThanOrEqual:
@@ -957,6 +980,9 @@ components:
                 PeshoType:
                   type: integer
                   format: int32
+                Product:
+                  type: integer
+                  format: int32
             lessThan:
               type: object
               properties:
@@ -971,6 +997,9 @@ components:
                   type: integer
                   format: int32
                 PeshoType:
+                  type: integer
+                  format: int32
+                Product:
                   type: integer
                   format: int32
             lessThanOrEqual:
@@ -989,14 +1018,17 @@ components:
                 PeshoType:
                   type: integer
                   format: int32
+                Product:
+                  type: integer
+                  format: int32
         $select:
           type: array
-          example: ["Id", "Name", "HowLongUntilDeath", "PeshoType"]
+          example: ["Id", "Name", "HowLongUntilDeath", "PeshoType", "Product"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Name,HowLongUntilDeath,PeshoType"
+            example: "Id,Name,HowLongUntilDeath,PeshoType,Product"
         $order:
           type: string
           enum: ["asc", "desc"]
